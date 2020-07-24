@@ -1,10 +1,15 @@
 package concurrency;
 
-class Reasoning {
-    //set up this class so it can become a valid thread. 
+class Reasoning extends Thread {
+    // set up this class so it can become a valid thread.
     void distinguish() {
-        //print to the console the difference between a thread and a process
-        //print out you think will happen if you invoke the run() method of a thread as opposed to the start() method of a thread.
+        System.out.println("A process can have multiple threads. A thread is sometimes called a lightweight process");
+        System.out.println("Thread.start creates a new thread while run is executing on the calling thread");
     }
-}
 
+    @Override
+    public void run() {
+        this.distinguish();
+    }
+
+}
